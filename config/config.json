@@ -1,0 +1,6 @@
+{
+    "board": {
+        "pieces": 5,
+        "initial_state": "BBBBB-WWWWW"
+    }
+}
