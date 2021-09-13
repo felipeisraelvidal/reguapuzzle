@@ -1,5 +1,4 @@
 import unittest
-import context
 from app.state import State
 
 class TestStateMethods(unittest.TestCase):

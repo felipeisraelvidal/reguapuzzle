@@ -1,6 +1,5 @@
 {
     "board": {
-        "pieces": 5,
-        "initial_state": "BBBBB-WWWWW"
+        "pieces": 100
     }
 }
