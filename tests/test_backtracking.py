@@ -1,9 +1,9 @@
-from typing import final
+import unittest
+import context
 from app.state import State
 from app.backtracking import Backtracking
-import unittest
 
-class TestStateMethods(unittest.TestCase):
+class TestBacktrackingMethods(unittest.TestCase):
     def test_is_solution(self):
         qtd_blocks = 3
 

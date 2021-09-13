@@ -1,10 +1,8 @@
 import unittest
+import context
 from app.state import State
 
 class TestStateMethods(unittest.TestCase):
-    def setUp(self) -> None:
-        return super().setUp()
-
     def test_initial_state(self):
         initial_state = State.generate_initial_state(2)
         self.assertEqual(initial_state.value, 'BB-WW')
