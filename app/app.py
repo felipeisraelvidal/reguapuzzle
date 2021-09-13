@@ -1,6 +1,6 @@
 import json
-from state import State
-from backtracking import Backtracking
+from app.state import State
+from app.backtracking import Backtracking
 import os
 
 def clear_console():

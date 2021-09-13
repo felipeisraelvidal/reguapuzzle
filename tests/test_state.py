@@ -1,5 +1,5 @@
 import unittest
-from state import State
+from app.state import State
 
 class TestStateMethods(unittest.TestCase):
     def setUp(self) -> None:

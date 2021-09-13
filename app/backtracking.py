@@ -1,6 +1,6 @@
 from re import S
-from algorithm import Algorithm
-from game_state import GameState
+from app.algorithm import Algorithm
+from app.game_state import GameState
 
 class Backtracking(Algorithm):
     algorithm_name = 'Backtracking'

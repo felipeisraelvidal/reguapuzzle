@@ -1,5 +1,5 @@
 import uuid
-from extensions import *
+from app.extensions import *
 import re
 
 class State():
