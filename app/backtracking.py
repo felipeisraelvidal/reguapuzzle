@@ -5,12 +5,13 @@ from app.game_state import GameState
 class Backtracking(Algorithm):
     algorithm_name = 'Backtracking'
 
-    def __init__(self, qtd_blocks, initial_state, final_states):
-        super().__init__(qtd_blocks, initial_state, final_states)
+    def __init__(self, qtd_blocks, initial_state, final_states, is_testing = False):
+        super().__init__(qtd_blocks, initial_state, final_states, is_testing)
 
         self.empty_piece_pos = self.initial_state.value.find('-')
 
-        print(self.empty_piece_pos)
+        if is_testing == False:
+            print(self.empty_piece_pos)
 
     def __generate_states(self):
         return []

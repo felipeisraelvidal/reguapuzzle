@@ -22,7 +22,8 @@ def main():
     if initial_state == None or initial_state == '':
         initial_state = State.generate_initial_state(number_of_pieces)
     else:
-        initial_state = State.generate_initial_state_from_value(initial_state, number_of_pieces)
+        print(initial_state)
+        initial_state = State.get_state_from_value(number_of_pieces, initial_state)
         if initial_state == None:
             raise ValueError('Invalid initial state in config file')
 

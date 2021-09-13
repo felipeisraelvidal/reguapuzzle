@@ -12,7 +12,7 @@ class TestStateMethods(unittest.TestCase):
 
         testing_solution_state = State.get_state_from_value(qtd_blocks, 'WWWB-BB')
         
-        bt = Backtracking(qtd_blocks, initial_state, final_states)
+        bt = Backtracking(qtd_blocks, initial_state, final_states, True)
         is_solution = bt._Backtracking__is_solution(testing_solution_state)
 
         self.assertTrue(is_solution)
@@ -25,7 +25,7 @@ class TestStateMethods(unittest.TestCase):
 
         testing_solution_state = State.get_state_from_value(qtd_blocks, 'WWB-BBW')
         
-        bt = Backtracking(qtd_blocks, initial_state, final_states)
+        bt = Backtracking(qtd_blocks, initial_state, final_states, True)
         is_solution = bt._Backtracking__is_solution(testing_solution_state)
 
         self.assertFalse(is_solution)
