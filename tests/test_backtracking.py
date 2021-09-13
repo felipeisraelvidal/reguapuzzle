@@ -1,9 +1,9 @@
-from typing import final
-from state import State
-from backtracking import Backtracking
 import unittest
+import context
+from app.state import State
+from app.backtracking import Backtracking
 
-class TestStateMethods(unittest.TestCase):
+class TestBacktrackingMethods(unittest.TestCase):
     def test_is_solution(self):
         qtd_blocks = 3
 
@@ -12,9 +12,9 @@ class TestStateMethods(unittest.TestCase):
 
         testing_solution_state = State.get_state_from_value(qtd_blocks, 'WWWB-BB')
         
-        bt = Backtracking(qtd_blocks, initial_state, final_states)
+        bt = Backtracking(qtd_blocks, initial_state, final_states, True)
         is_solution = bt._Backtracking__is_solution(testing_solution_state)
-        
+
         self.assertTrue(is_solution)
 
     def test_is_not_solution(self):
@@ -25,7 +25,7 @@ class TestStateMethods(unittest.TestCase):
 
         testing_solution_state = State.get_state_from_value(qtd_blocks, 'WWB-BBW')
         
-        bt = Backtracking(qtd_blocks, initial_state, final_states)
+        bt = Backtracking(qtd_blocks, initial_state, final_states, True)
         is_solution = bt._Backtracking__is_solution(testing_solution_state)
 
         self.assertFalse(is_solution)

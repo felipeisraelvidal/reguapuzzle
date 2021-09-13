@@ -1,5 +1,5 @@
 import uuid
-from extensions import *
+from app.extensions import *
 import re
 
 class State():
@@ -19,23 +19,12 @@ class State():
         
         return State(result_value, None, 0)
 
-    # TODO: o estado inicial não precisa ser exatamente do tipo BB-WW
-    # TODO: rever o regex. O hífen pode estar em qualquer posição da string
-    @staticmethod
-    def generate_initial_state_from_value(value, qtd_blocks):
-        """Return a State object if the value is valid"""
-        if len(value) != (qtd_blocks * 2) + 1:
-            return None
-        else:
-            regex = r'([B]{2,})-([W]{2,})$'
-            result = re.fullmatch(regex, value)
-            if result != None and len(result.group(1)) == len(result.group(2)):
-                return State(value, None, 0)
-        return None
-
     @staticmethod
     def get_state_from_value(qtd_blocks, value, id_parent = None, weight = 0):
-        return State(value, id_parent, weight)
+        b_group = "".join(re.findall(r'[B]', value))
+        w_group = "".join(re.findall(r'[W]', value))
+        if len(b_group) == len(w_group) == qtd_blocks:
+            return State(value, id_parent, weight)
 
     @staticmethod
     def generate_final_states(qtd_blocks):

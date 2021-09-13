@@ -1,10 +1,8 @@
 import unittest
-from state import State
+import context
+from app.state import State
 
 class TestStateMethods(unittest.TestCase):
-    def setUp(self) -> None:
-        return super().setUp()
-
     def test_initial_state(self):
         initial_state = State.generate_initial_state(2)
         self.assertEqual(initial_state.value, 'BB-WW')
@@ -22,14 +20,14 @@ class TestStateMethods(unittest.TestCase):
         self.assertIn('WWB-B', final_states)
         self.assertIn('WWBB-', final_states)
 
-    def test_generate_initial_state_from_value(self):
+    def test_get_state_from_value(self):
         state_value = 'BBBBB-WWWWW'
-        initial_state = State.generate_initial_state_from_value(state_value, 5)
+        initial_state = State.get_state_from_value(5, state_value)
         self.assertIsNotNone(initial_state)
 
-    def test_not_generate_initial_state_from_value_because_is_invalid(self):
-        state_value = 'BBBBH-WWWWW'
-        initial_state = State.generate_initial_state_from_value(state_value, 5)
+    def test_not_get__state_from_value_because_is_invalid(self):
+        state_value = 'BBBBH-WWWW'
+        initial_state = State.get_state_from_value(5, state_value)
         self.assertIsNone(initial_state)
 
     def test_valid_initial_state(self):
