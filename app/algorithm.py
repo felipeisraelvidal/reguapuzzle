@@ -16,6 +16,9 @@ class Algorithm():
     def execute(self):
         raise ValueError("execute function not implemented")
 
+    def __is_solution(self, state):
+        return state.value in self.final_states
+
     def __del__(self):
         if self.is_testing == False and self.algorithm_name is not None and self.algorithm_name != '':
             delimiter_char = '='

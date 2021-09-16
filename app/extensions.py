@@ -14,3 +14,5 @@ def replacer(variable, newstring, index, nofail=False):
 
     # insert the new string between "slices" of the original
     return variable[:index] + newstring + variable[index + 1:]
+
+find = lambda fun, lst: next((x for x in lst if fun(x)), None)

@@ -2,6 +2,7 @@ from app.algorithm import Algorithm
 from app.game_state import GameState
 from app.state import State
 from app.extensions import *
+from app.bcolors import bcolors
 import time
 
 class Backtracking(Algorithm):
@@ -76,7 +77,7 @@ class Backtracking(Algorithm):
         for state in arr:
             print(f'\t{state}')
 
-    # TODO: Calcular a profundidade e o custo da solução
+    # TODO: Calcular a profundidade e o custo da solução = número de movimentos
     # TODO: Calcular o número total de nós expandidos e visitados
     # TODO: Calcular o valor médio do fator de ramificação da árvore de busca
     def execute(self):
@@ -104,7 +105,14 @@ class Backtracking(Algorithm):
 
         stop_time = time.time()
 
-        print('Finished Game: ', game_state)
+        color = bcolors.ENDC
+        if game_state == GameState.SUCCESS:
+            color = bcolors.OKGREEN
+        elif game_state == GameState.FAIL:
+            color = bcolors.FAIL
+        
+        print(f'{color}Finished Game: ', game_state, bcolors.ENDC)
+
         print(f'Execution time: {stop_time - start_time}s')
         
         self.__get_path(n, stack)

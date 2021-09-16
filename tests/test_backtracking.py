@@ -76,9 +76,6 @@ class TestBacktrackingMethods(unittest.TestCase):
         n = bt._Backtracking__generate_states(n)
         self.assertEqual(n.value, '-WBBW')
 
-        # n = bt._Backtracking__generate_states(n)
-        # self.assertEqual(n.value, 'WWBB-')
-
 
 if __name__ == "__main__":
     unittest.main()

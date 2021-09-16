@@ -1,3 +1,4 @@
+from app.breadth_first_search import BreadthFirstSearch
 import json
 from app.state import State
 from app.backtracking import Backtracking
@@ -35,8 +36,11 @@ def main():
     for state in final_states:
         print(f'\t{state}')
     
-    bt = Backtracking(number_of_pieces, initial_state, final_states)
-    bt.execute()
+    # bt = Backtracking(number_of_pieces, initial_state, final_states)
+    # bt.execute()
+
+    bfs = BreadthFirstSearch(number_of_pieces, initial_state, final_states)
+    bfs.execute()
 
     f.close()
 
