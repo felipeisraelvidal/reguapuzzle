@@ -6,7 +6,7 @@ class Algorithm():
         self.is_testing = is_testing
 
         if is_testing == False and self.algorithm_name is not None and self.algorithm_name != '':
-            title = f'Welcome to {self.algorithm_name}'
+            title = f'Executando {self.algorithm_name}'
             self.title_len = len(title)
 
             delimiter_char = '='

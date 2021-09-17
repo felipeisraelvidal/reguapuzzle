@@ -3,10 +3,11 @@ from app.extensions import *
 from app.game_state import GameState
 from app.state import State
 from app.bcolors import bcolors
+from app.output import Output
 import time
 
 class AStar(Algorithm):
-    algorithm_name = 'A Star'
+    algorithm_name = 'A*'
 
     __final_state = None
     __closed_states_ids = {}
@@ -179,8 +180,15 @@ class AStar(Algorithm):
         average_ramification_factor = self.__qtd_expanded_nodes / (self.__tree_height + 1)
         average_ramification_factor = round(average_ramification_factor, 2)
 
+        execution_time = stop_time - start_time
+
+        output = Output(self.algorithm_name, game_state, self.__qtd_expanded_nodes, self.__qtd_visited_nodes, average_ramification_factor, execution_time)
+        
         print(f'Total de Nós Expandidos: {self.__qtd_expanded_nodes}')
         print(f'Total de Nós Visitados: {self.__qtd_visited_nodes}')
         print(f'Valor Médio do Fator de Ramificação da Árvore: {average_ramification_factor}')
         print(f'Execution time: {stop_time - start_time}s')
+        
         print(f'{color}Finished Game: ', game_state, bcolors.ENDC)
+
+        return output

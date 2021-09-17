@@ -3,11 +3,12 @@ from app.extensions import *
 from app.state import State
 from app.game_state import GameState
 from app.bcolors import bcolors
+from app.output import Output
 from math import *
 import time
 
 class UniformCostSearch(Algorithm):
-    algorithm_name = 'Uniform Cost Search'
+    algorithm_name = 'Busca Ordernada'
 
     __open_queue = []
     __open_dict = {}
@@ -162,9 +163,15 @@ class UniformCostSearch(Algorithm):
         average_ramification_factor = self.__qtd_expanded_nodes / (self.__tree_height + 1)
         average_ramification_factor = round(average_ramification_factor, 2)
         
+        execution_time = stop_time - start_time
+
+        output = Output(self.algorithm_name, self._game_state, self.__qtd_expanded_nodes, self.__qtd_visited_nodes, average_ramification_factor, execution_time)
+        
         print(f'Total de Nós Expandidos: {self.__qtd_expanded_nodes}')
         print(f'Total de Nós Visitados: {self.__qtd_visited_nodes}')
         print(f'Valor Médio do Fator de Ramificação da Árvore: {average_ramification_factor}')
         print(f'Execution time: {stop_time - start_time}s')
         
         print(f'{color}Finished Game: ', self._game_state, bcolors.ENDC)
+
+        return output

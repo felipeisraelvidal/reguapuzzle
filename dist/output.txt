@@ -1,0 +1,264 @@
+Quantidade de Nós: 1
+
+Backtracking:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 2
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 0.0002841949462890625s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 3
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 8.821487426757812e-05s
+Finished Game: GameState.FAIL
+
+Busca em Profundidade:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 3
+Valor Médio do Fator de Ramificação da Árvore: 2.0
+Execution time: 6.699562072753906e-05s
+Finished Game: GameState.FAIL
+
+Busca Ordernada:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 3
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 6.914138793945312e-05s
+Finished Game: GameState.FAIL
+
+Busca Gulosa:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 3
+Valor Médio do Fator de Ramificação da Árvore: 0.67
+Execution time: 6.604194641113281e-05s
+Finished Game: GameState.FAIL
+
+A*:
+Total de Nós Expandidos: 2
+Total de Nós Visitados: 3
+Valor Médio do Fator de Ramificação da Árvore: 0.67
+Execution time: 4.8160552978515625e-05s
+Finished Game: GameState.FAIL
+
+Quantidade de Nós: 2
+
+Backtracking:
+Total de Nós Expandidos: 4
+Total de Nós Visitados: 4
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 8.273124694824219e-05s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 25
+Total de Nós Visitados: 22
+Valor Médio do Fator de Ramificação da Árvore: 3.57
+Execution time: 0.0003628730773925781s
+Finished Game: GameState.SUCCESS
+
+Busca em Profundidade:
+Total de Nós Expandidos: 22
+Total de Nós Visitados: 12
+Valor Médio do Fator de Ramificação da Árvore: 22.0
+Execution time: 0.0002548694610595703s
+Finished Game: GameState.SUCCESS
+
+Busca Ordernada:
+Total de Nós Expandidos: 34
+Total de Nós Visitados: 30
+Valor Médio do Fator de Ramificação da Árvore: 4.86
+Execution time: 0.0005440711975097656s
+Finished Game: GameState.SUCCESS
+
+Busca Gulosa:
+Total de Nós Expandidos: 16
+Total de Nós Visitados: 13
+Valor Médio do Fator de Ramificação da Árvore: 2.0
+Execution time: 0.00037789344787597656s
+Finished Game: GameState.SUCCESS
+
+A*:
+Total de Nós Expandidos: 16
+Total de Nós Visitados: 13
+Valor Médio do Fator de Ramificação da Árvore: 2.0
+Execution time: 0.00032901763916015625s
+Finished Game: GameState.SUCCESS
+
+Quantidade de Nós: 3
+
+Backtracking:
+Total de Nós Expandidos: 6
+Total de Nós Visitados: 6
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 0.00015997886657714844s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 133
+Total de Nós Visitados: 123
+Valor Médio do Fator de Ramificação da Árvore: 14.78
+Execution time: 0.002395153045654297s
+Finished Game: GameState.SUCCESS
+
+Busca em Profundidade:
+Total de Nós Expandidos: 80
+Total de Nós Visitados: 36
+Valor Médio do Fator de Ramificação da Árvore: 80.0
+Execution time: 0.0008902549743652344s
+Finished Game: GameState.SUCCESS
+
+Busca Ordernada:
+Total de Nós Expandidos: 279
+Total de Nós Visitados: 256
+Valor Médio do Fator de Ramificação da Árvore: 27.9
+Execution time: 0.004603862762451172s
+Finished Game: GameState.SUCCESS
+
+Busca Gulosa:
+Total de Nós Expandidos: 78
+Total de Nós Visitados: 60
+Valor Médio do Fator de Ramificação da Árvore: 7.09
+Execution time: 0.0018851757049560547s
+Finished Game: GameState.SUCCESS
+
+A*:
+Total de Nós Expandidos: 79
+Total de Nós Visitados: 61
+Valor Médio do Fator de Ramificação da Árvore: 7.18
+Execution time: 0.0021219253540039062s
+Finished Game: GameState.SUCCESS
+
+Quantidade de Nós: 4
+
+Backtracking:
+Total de Nós Expandidos: 8
+Total de Nós Visitados: 8
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 0.0002129077911376953s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 621
+Total de Nós Visitados: 599
+Valor Médio do Fator de Ramificação da Árvore: 56.45
+Execution time: 0.013889074325561523s
+Finished Game: GameState.SUCCESS
+
+Busca em Profundidade:
+Total de Nós Expandidos: 173
+Total de Nós Visitados: 81
+Valor Médio do Fator de Ramificação da Árvore: 173.0
+Execution time: 0.0018801689147949219s
+Finished Game: GameState.SUCCESS
+
+Busca Ordernada:
+Total de Nós Expandidos: 1759
+Total de Nós Visitados: 1688
+Valor Médio do Fator de Ramificação da Árvore: 135.31
+Execution time: 0.06612396240234375s
+Finished Game: GameState.SUCCESS
+
+Busca Gulosa:
+Total de Nós Expandidos: 348
+Total de Nós Visitados: 277
+Valor Médio do Fator de Ramificação da Árvore: 26.77
+Execution time: 0.010345935821533203s
+Finished Game: GameState.SUCCESS
+
+A*:
+Total de Nós Expandidos: 477
+Total de Nós Visitados: 373
+Valor Médio do Fator de Ramificação da Árvore: 36.69
+Execution time: 0.01418304443359375s
+Finished Game: GameState.SUCCESS
+
+Quantidade de Nós: 5
+
+Backtracking:
+Total de Nós Expandidos: 10
+Total de Nós Visitados: 10
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 0.0001552104949951172s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 2761
+Total de Nós Visitados: 2716
+Valor Médio do Fator de Ramificação da Árvore: 212.38
+Execution time: 0.07906508445739746s
+Finished Game: GameState.SUCCESS
+
+Busca em Profundidade:
+Total de Nós Expandidos: 2260
+Total de Nós Visitados: 2123
+Valor Médio do Fator de Ramificação da Árvore: 2260.0
+Execution time: 0.032135963439941406s
+Finished Game: GameState.SUCCESS
+
+Busca Ordernada:
+Total de Nós Expandidos: 9943
+Total de Nós Visitados: 9760
+Valor Médio do Fator de Ramificação da Árvore: 662.87
+Execution time: 1.0415458679199219s
+Finished Game: GameState.SUCCESS
+
+Busca Gulosa:
+Total de Nós Expandidos: 1510
+Total de Nós Visitados: 1259
+Valor Médio do Fator de Ramificação da Árvore: 88.82
+Execution time: 0.0887758731842041s
+Finished Game: GameState.SUCCESS
+
+A*:
+Total de Nós Expandidos: 2292
+Total de Nós Visitados: 1967
+Valor Médio do Fator de Ramificação da Árvore: 152.8
+Execution time: 0.13417792320251465s
+Finished Game: GameState.SUCCESS
+
+Quantidade de Nós: 6
+
+Backtracking:
+Total de Nós Expandidos: 12
+Total de Nós Visitados: 12
+Valor Médio do Fator de Ramificação da Árvore: 1.0
+Execution time: 0.0002467632293701172s
+Finished Game: GameState.SUCCESS
+
+Busca em Largura:
+Total de Nós Expandidos: 11999
+Total de Nós Visitados: 11912
+Valor Médio do Fator de Ramificação da Árvore: 799.93
+Execution time: 0.3942451477050781s
+Finished Game: GameState.SUCCESS
+
+Busca em Profundidade:
+Total de Nós Expandidos: 10883
+Total de Nós Visitados: 10691
+Valor Médio do Fator de Ramificação da Árvore: 10883.0
+Execution time: 0.27878403663635254s
+Finished Game: GameState.SUCCESS
+
+Busca Ordernada:
+Total de Nós Expandidos: 52383
+Total de Nós Visitados: 51954
+Valor Médio do Fator de Ramificação da Árvore: 3081.35
+Execution time: 23.886845111846924s
+Finished Game: GameState.SUCCESS
+
+Busca Gulosa:
+Total de Nós Expandidos: 6467
+Total de Nós Visitados: 5544
+Valor Médio do Fator de Ramificação da Árvore: 307.95
+Execution time: 0.9134798049926758s
+Finished Game: GameState.SUCCESS
+
+A*:
+Total de Nós Expandidos: 10843
+Total de Nós Visitados: 9845
+Valor Médio do Fator de Ramificação da Árvore: 570.68
+Execution time: 1.9079091548919678s
+Finished Game: GameState.SUCCESS
+
