@@ -1,8 +1,11 @@
-from app.uniform_cost_search import UniformCostSearch
-from app.breadth_first_search import BreadthFirstSearch
+from app.depth_first_search import DepthFirstSearch
 import json
 from app.state import State
 from app.backtracking import Backtracking
+from app.breadth_first_search import BreadthFirstSearch
+from app.uniform_cost_search import UniformCostSearch
+from app.astar_search import AStar
+from app.ida_star import IDAstar
 import os
 
 def clear_console():
@@ -37,14 +40,23 @@ def main():
     for state in final_states:
         print(f'\t{state}')
     
-    # bt = Backtracking(number_of_pieces, initial_state, final_states)
-    # bt.execute()
+    bt = Backtracking(number_of_pieces, initial_state, final_states)
+    bt.execute()
 
-    # bfs = BreadthFirstSearch(number_of_pieces, initial_state, final_states)
-    # bfs.execute()
+    bfs = BreadthFirstSearch(number_of_pieces, initial_state, final_states)
+    bfs.execute()
+
+    dfs = DepthFirstSearch(number_of_pieces, initial_state, final_states)
+    dfs.execute()
 
     ucs = UniformCostSearch(number_of_pieces, initial_state, final_states)
     ucs.execute()
+
+    astar = AStar(number_of_pieces, initial_state, final_states)
+    astar.execute()
+
+    # idastar = IDAstar(number_of_pieces, initial_state, final_states)
+    # idastar.execute()
 
     f.close()
 

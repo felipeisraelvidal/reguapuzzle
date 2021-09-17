@@ -34,54 +34,33 @@ class IDAstar():
 
         empty_index = state.value.find('-')
 
-        # print('----------------------------------------')
-        # print(f'-> {state.value}')
-        # print(f'Empty piece at position {empty_index}')
-
         if self.current_move == 'L':
-            # print(f'Move {self.current_distance} to left')
 
             if empty_index - self.current_distance < 1:
                 return None
-
-            # print('Current move: L')
-            # print(f'Empty index: {empty_index}')
-            # print(f'Current distance: {self.current_distance}')
 
             new_state_value = state.value
             new_state_value = replacer(new_state_value, state.value[empty_index - self.current_distance], empty_index)
             new_state_value = replacer(new_state_value, '-', empty_index - self.current_distance)
 
-            new_state = State(new_state_value, state.id)
-            # print(f'-> {new_state_value} ({new_state.id} - {new_state.parent})')
+            new_state = State(new_state_value, state.id, 0)
 
             self.current_move = 'R'
             self.current_distance = self.current_distance + 1
 
-            # print('----------------------------------------')
-
             return new_state
         elif self.current_move == 'R':
-            # print(f'Move {self.current_distance} to right')
-
             if empty_index + self.current_distance > len(state.value) - 1:
                 return None
-
-            # print('Current move: R')
-            # print(f'Empty index: {empty_index}')
-            # print(f'Current distance: {self.current_distance}')
 
             new_state_value = state.value
             new_state_value = replacer(new_state_value, state.value[empty_index + self.current_distance], empty_index)
             new_state_value = replacer(new_state_value, '-', empty_index + self.current_distance)
 
-            new_state = State(new_state_value, state.parent)
-            # print(f'-> {new_state_value} ({new_state.id} - {new_state.parent})')
+            new_state = State(new_state_value, state.id, 0)
 
             self.current_move = 'L'
             self.current_distance = self.current_distance + 1
-
-            # print('----------------------------------------')
 
             return new_state
 
@@ -116,12 +95,12 @@ class IDAstar():
 
         return cout
 
-    def is_solution(self, state):
-        return any(elem for elem in self.final_states if elem == state.value)
+    def __is_solution(self, state):
+        return state.value in self.final_states
 
     def back_to_parent(self, state, stack):
-        if state.parent != None:
-            parent = stack[state.parent]
+        if state.id_parent != None:
+            parent = stack[state.id_parent]
             return parent
 
     def execute(self):
@@ -145,7 +124,7 @@ class IDAstar():
                 game_state = GameState.FAIL
             else:
                 fn = self.heuristicFunction(n.value)
-                if self.is_solution(n) and fn <= self.patamar:
+                if self.__is_solution(n) and fn <= self.patamar:
                     game_state = GameState.SUCCESS
                 else:
                     if fn > self.patamar:
@@ -167,24 +146,6 @@ class IDAstar():
                             # descartados.remove(min_fn)
                         else:
                             n = self.back_to_parent(n, stack)
-
-
-
-
-                # next_state = self.teste(n)
-                # if next_state != None:
-                #     n = next_state
-                #     stack[n.id] = n
-                #     if self.is_solution(n) == True:
-                #         game_state = GameState.SUCCESS
-                # else:
-                #     if n.value == s.value:
-                #         game_state = GameState.FAIL
-                #     else:
-                #         state_Value = n.value
-                #         n = self.back_to_parent(n, stack)
-                #         print(f'bt  {state_Value} -> {n.value}')
-                # print(f'n = {n.value}')
 
 
         print(game_state)

@@ -5,8 +5,7 @@ from app.state import State
 from app.bcolors import bcolors
 import time
 
-class Astar(Algorithm):
-
+class AStar(Algorithm):
     algorithm_name = 'A Star'
 
     __final_state = None
@@ -18,16 +17,6 @@ class Astar(Algorithm):
 
     def __init__(self, qtd_blocks, initial_state, final_states, is_testing=False):
         super().__init__(qtd_blocks, initial_state, final_states, is_testing)
-        self.qtd_blocks = qtd_blocks
-        self.initial_state = initial_state
-        self.final_states = final_states
-
-        print('Initial state:')
-        print(f'\t{self.initial_state.value}')
-        print('Final states:')
-        for state in final_states:
-            print(f'\t{state}')
-        print('=============================================================================================')
 
     def __get_path(self, final_state, stack):
         arr = []
@@ -80,7 +69,7 @@ class Astar(Algorithm):
                             new_weight = custom + self.heuristicFunction(new_state_value, current_distance)
                             new_state = State(new_state_value, state.id, new_weight, height, custom + current_distance)
 
-                            if self.is_solution(new_state):
+                            if self.__is_solution(new_state):
                                 self.__qtd_visited_nodes = self.__qtd_visited_nodes + 1
                                 return new_state
                             open_queue.append(new_state)
@@ -99,7 +88,7 @@ class Astar(Algorithm):
                             new_weight = custom + self.heuristicFunction(new_state_value, current_distance)
                             new_state = State(new_state_value, state.id, new_weight, height, custom + current_distance)
 
-                            if self.is_solution(new_state):
+                            if self.__is_solution(new_state):
                                 self.__qtd_visited_nodes = self.__qtd_visited_nodes + 1
                                 return new_state
 
@@ -108,8 +97,8 @@ class Astar(Algorithm):
 
                 current_distance = current_distance + 1
 
-    def is_solution(self, state):
-        return any(elem for elem in self.final_states if elem == state.value)
+    def __is_solution(self, state):
+        return state.value in self.final_states
 
     def heuristicFunction(self, state, distance):
         dist = 0
@@ -157,7 +146,7 @@ class Astar(Algorithm):
                 game_state = GameState.FAIL
             else:
                 n = open_queue[0]
-                if self.is_solution(n):
+                if self.__is_solution(n):
                     self.__final_state = n
                     game_state = GameState.SUCCESS
                 else:
