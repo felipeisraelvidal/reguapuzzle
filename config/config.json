@@ -1,5 +1,6 @@
 {
     "board": {
-        "pieces": 4
+        "pieces": 3,
+        "initial_state": "WBW-WBB"
     }
 }

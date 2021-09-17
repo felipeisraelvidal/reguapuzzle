@@ -36,11 +36,11 @@ def main():
     for state in final_states:
         print(f'\t{state}')
     
-    # bt = Backtracking(number_of_pieces, initial_state, final_states)
-    # bt.execute()
+    bt = Backtracking(number_of_pieces, initial_state, final_states)
+    bt.execute()
 
-    bfs = BreadthFirstSearch(number_of_pieces, initial_state, final_states)
-    bfs.execute()
+    # bfs = BreadthFirstSearch(number_of_pieces, initial_state, final_states)
+    # bfs.execute()
 
     f.close()
 

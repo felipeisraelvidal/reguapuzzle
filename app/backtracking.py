@@ -12,6 +12,13 @@ class Backtracking(Algorithm):
     __current_distance = 1
     __initial_empty_index_pos = 0
 
+    __final_state = None
+
+    __qtd_visited_nodes = 0
+    __qtd_expanded_nodes = 0
+
+    __tree_height = 0
+
     def __init__(self, qtd_blocks, initial_state, final_states, is_testing = False):
         super().__init__(qtd_blocks, initial_state, final_states, is_testing)
 
@@ -22,6 +29,8 @@ class Backtracking(Algorithm):
             return None
 
         empty_index = state.value.find('-')
+
+        self.__tree_height = max([state.height, self.__tree_height])
 
         if self.__current_move == 'L':
             if empty_index - self.__current_distance < 0:
@@ -34,7 +43,7 @@ class Backtracking(Algorithm):
             new_state_value = replacer(new_state_value, state.value[empty_index - self.__current_distance], empty_index)
             new_state_value = replacer(new_state_value, '-', empty_index - self.__current_distance)
 
-            new_state = State.get_state_from_value(self.qtd_blocks, new_state_value, id_parent=state.id)
+            new_state = State.get_state_from_value(self.qtd_blocks, new_state_value, id_parent=state.id, height=state.height + 1)
 
             self.__current_move = 'R'
             self.__current_distance = self.__current_distance + 1
@@ -51,7 +60,7 @@ class Backtracking(Algorithm):
             new_state_value = replacer(new_state_value, state.value[empty_index + self.__current_distance], empty_index)
             new_state_value = replacer(new_state_value, '-', empty_index + self.__current_distance)
 
-            new_state = State.get_state_from_value(self.qtd_blocks, new_state_value, id_parent=state.id)
+            new_state = State.get_state_from_value(self.qtd_blocks, new_state_value, id_parent=state.id, height=state.height + 1)
 
             self.__current_move = 'L'
             self.__current_distance = self.__current_distance + 1
@@ -92,10 +101,14 @@ class Backtracking(Algorithm):
 
         while game_state == GameState.PLAYING:
             new_state = self.__generate_states(n);
+            self.__qtd_visited_nodes = self.__qtd_visited_nodes + 1
+
             if new_state != None:
                 n = new_state
                 stack[n.id] = n
+                self.__qtd_expanded_nodes = self.__qtd_expanded_nodes + 1
                 if self.__is_solution(n):
+                    self.__final_state = n
                     game_state = GameState.SUCCESS
             else:
                 if n.value == s.value:
@@ -111,8 +124,20 @@ class Backtracking(Algorithm):
         elif game_state == GameState.FAIL:
             color = bcolors.FAIL
         
-        print(f'{color}Finished Game: ', game_state, bcolors.ENDC)
+        if self.__final_state is not None:
+            self.__get_path(self.__final_state, stack)
 
+            print(f'Profundidade: {self.__final_state.height}')
+        else:
+            print('Path:\n\t-')
+            print(f'Profundidade: -1')
+
+        average_ramification_factor = self.__qtd_expanded_nodes / (self.__tree_height + 1)
+        average_ramification_factor = round(average_ramification_factor, 2)
+        
+        print(f'Total de Nós Expandidos: {self.__qtd_expanded_nodes}')
+        print(f'Total de Nós Visitados: {self.__qtd_visited_nodes}')
+        print(f'Valor Médio do Fator de Ramificação da Árvore: {average_ramification_factor}')
         print(f'Execution time: {stop_time - start_time}s')
         
-        self.__get_path(n, stack)
+        print(f'{color}Finished Game: ', game_state, bcolors.ENDC)

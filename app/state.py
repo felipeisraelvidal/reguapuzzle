@@ -4,11 +4,13 @@ import re
 
 class State():
 
-    def __init__(self, value, id_parent, weight):
+    def __init__(self, value, id_parent, weight, height = 0, w_before = 0):
         self.id = uuid.uuid1()
         self.value = value
         self.id_parent = id_parent
         self.weight = weight
+        self.height = height
+        self.w_before = w_before
     
     @staticmethod
     def generate_initial_state(qtd_blocks):
@@ -20,11 +22,11 @@ class State():
         return State(result_value, None, 0)
 
     @staticmethod
-    def get_state_from_value(qtd_blocks, value, id_parent = None, weight = 0):
+    def get_state_from_value(qtd_blocks, value, id_parent = None, weight = 0, height = 0):
         b_group = "".join(re.findall(r'[B]', value))
         w_group = "".join(re.findall(r'[W]', value))
         if len(b_group) == len(w_group) == qtd_blocks:
-            return State(value, id_parent, weight)
+            return State(value, id_parent, weight, height)
 
     @staticmethod
     def generate_final_states(qtd_blocks):
