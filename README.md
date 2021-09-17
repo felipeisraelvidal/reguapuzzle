@@ -7,18 +7,6 @@ Existem N blocos brancos que denominamos *W*, N blocos pretos que denominados *B
 O objetivo do jogo é colocar todos os blocos brancos do lado esquerdo dos blocos pretos.
 
 Uma solução ótima para esse jogo é aquela encontrada com o menor número de movimentos, de menor custo.
-
-# Régua Puzzle
-
-## Como Executar?
-
-Para executar o programa, vá até a pasta raíz do projeto e execute o seguinte comando no terminal.
-
-```
-python3 app.py
-```
-
-Caso queira mudar os dados de entrada do problema, você pode editar o arquivo config.json, localizado na pasta config.
 ## Uso
 
 Para executar o programa, abra o terminal e navegue até a pasta raíz do projeto e em seguida, execute o seguinte comando:
