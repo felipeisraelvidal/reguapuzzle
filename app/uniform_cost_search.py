@@ -46,12 +46,9 @@ class UniformCostSearch(Algorithm):
                         if self.is_solution(new_state):
                             return new_state
 
-                        # states.append(new_state)
                         open_queue.append(new_state)  # adiciona já diretamente na lista de abertos
 
-                        # open_queueSet[new_state_value] = True  # ADICIONA VALOR NOVO NO SET DE ABERTOS
 
-                # Mudar para a direita
                 if empty_index + current_distance <= len(state.value) - 1:
                     new_state_value = state.value
                     new_state_value = replacer(new_state_value, new_state_value[empty_index + current_distance],
@@ -69,22 +66,11 @@ class UniformCostSearch(Algorithm):
                         if self.is_solution(new_state):
                             return new_state
 
-                        # states.append(new_state)
                         open_queue.append(new_state)  # adiciona já diretamente na lista de abertos
 
-                        # open_queueSet[new_state_value] = True #ADICIONA VALOR NOVO NO SET DE ABERTOS
 
                 current_distance = current_distance + 1
 
-        # print('Lista abertos (antes da ordenação)')
-        # for state in open_queue:
-        #     print(state.value, state.weight)
-
-        # sort
-        # open_queue.sort(key=self.sortKeyFunc)
-        # print('Lista abertos (depois da ordenação)')
-        # for state in open_queue:
-        #     print(state.value, state.weight)
 
     def is_solution(self, state):
         return any(elem for elem in self.final_states if elem == state.value)
@@ -100,11 +86,9 @@ class UniformCostSearch(Algorithm):
 
         open_queue.append(s)
 
-        # open_queueSet[s.value] = True
 
         start_time = time.time()
         while game_state == GameState.PLAYING:
-            # print(f'Len(open_queue): {len(open_queue)}')
             if len(open_queue) == 0:
                 game_state = GameState.FAIL
             else:
@@ -119,7 +103,6 @@ class UniformCostSearch(Algorithm):
                     now_closed = open_queue.pop(0)
                     close_list[now_closed.value] = now_closed
                     open_queue.sort(key=self.sortKeyFunc)
-                    # open_queueSet.remove(now_closed.value)
 
         stop_time = time.time()
 
